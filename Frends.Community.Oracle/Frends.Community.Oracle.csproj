@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>70d45fde-4440-4bff-9510-11e3c39a8818</ProjectGuid>
+    <ProjectGuid>d9124d6c-e5a0-4624-9e7f-0442a109e889</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Frends.Community.Oracle</RootNamespace>
