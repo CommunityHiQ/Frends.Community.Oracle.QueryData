@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Frends.Community.Oracle", "Frends.Community.Oracle\Frends.Community.Oracle.csproj", "{D9124D6C-E5A0-4624-9E7F-0442A109E889}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Frends.Community.Oracle.QueryData", "Frends.Community.Oracle.QueryData\Frends.Community.Oracle.QueryData.csproj", "{D9124D6C-E5A0-4624-9E7F-0442A109E889}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Frends.Community.Oracle.Helpers", "Frends.Community.Oracle.Helpers\Frends.Community.Oracle.Helpers.csproj", "{11DE85AA-7358-4C79-B503-43E2773CEA84}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{D9124D6C-E5A0-4624-9E7F-0442A109E889}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D9124D6C-E5A0-4624-9E7F-0442A109E889}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D9124D6C-E5A0-4624-9E7F-0442A109E889}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11DE85AA-7358-4C79-B503-43E2773CEA84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11DE85AA-7358-4C79-B503-43E2773CEA84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11DE85AA-7358-4C79-B503-43E2773CEA84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11DE85AA-7358-4C79-B503-43E2773CEA84}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
