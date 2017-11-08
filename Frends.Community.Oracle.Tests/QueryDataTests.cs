@@ -15,24 +15,21 @@ namespace Frends.Community.Oracle.Tests
         {
             // No way to automate this test without an Oracle instance. So it's just commented out.
 
-            string query = "SELECT * FROM XPNIS_SYSTEM_SYSDESCR;";
+            //string query = "SELECT * FROM XPNIS_SYSTEM_SYSDESCR;";
+            
+            //Parameters.Options Options = new Parameters.Options();
+            //Parameters.Input Inputs = new Parameters.Input();
 
+            //Inputs.Query = query;
+            //Inputs.ConnectionString = connectionString;
 
-            Parameters.Options Options = new Parameters.Options();
-            Parameters.Input Inputs = new Parameters.Input();
+            //Options.MaxmimumRows = 100;
+            //Options.RootElementName = "root";
+            //Options.RowElementName = "row";
 
-            Inputs.Query = query;
-            Inputs.ConnectionString = connectionString;
+            //var result = QueryData.QueryData.ExecuteQuery(Inputs, Options, new CancellationToken());
 
-            Options.MaxmimumRows = 100;
-            Options.RootElementName = "root";
-            Options.RowElementName = "row";
-
-
-            //OracleParameter[] parameters = new OracleParameter[0];
-            var result = QueryData.QueryData.ExecuteQuery(Inputs, Options, new CancellationToken());
-
-            Assert.AreEqual(System.Threading.Tasks.TaskStatus.RanToCompletion, result.Status);
+            //Assert.AreEqual(System.Threading.Tasks.TaskStatus.RanToCompletion, result.Status);
         }
     }
 }

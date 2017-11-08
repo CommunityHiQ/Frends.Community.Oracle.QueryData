@@ -11,30 +11,54 @@ namespace Frends.Community.Oracle.Helpers
     {
         public class Input
         {
+            /// <summary>
+            /// The connection string to the Oracle server
+            /// </summary>
             [PasswordPropertyText(true)]
             [DefaultValue("\"Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=MyHost)(PORT=MyPort))(CONNECT_DATA=(SERVICE_NAME=MyOracleSID)));User Id=myUsername;Password=myPassword;\"")]
             public String ConnectionString { get; set; }
 
+            /// <summary>
+            /// The query to perform
+            /// </summary>
             [DefaultValue("@\"SELECT NameColumn FROM TestTable\"")]
             public String Query { get; set; }
         }
 
         public class Options
         {
+            /// <summary>
+            /// The name of the root element of the resultset
+            /// </summary>
             [DefaultValue("\"ROWSET\"")]
             public String RootElementName { get; set; }
 
+            /// <summary>
+            /// The name of the row element name of the resultset
+            /// </summary>
             [DefaultValue("\"ROW\"")]
             public String RowElementName { get; set; }
 
+            /// <summary>
+            /// The maximum amount of rows to return; defaults to -1 eg. no limit
+            /// </summary>
             [DefaultValue(-1)]
             public Int32 MaxmimumRows { get; set; }
 
+            /// <summary>
+            /// The timeout value in seconds
+            /// </summary>
             [DefaultValue(30)]
             public Int32 TimeoutSeconds { get; set; }
 
+            /// <summary>
+            /// Parameters for the database query
+            /// </summary>
             public OracleParameter[] Parameters { get; set; }
 
+            /// <summary>
+            /// In what format to return the results of the query
+            /// </summary>
             public OracleQueryReturnType ReturnType { get; set; }
         }
 
