@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Frends.Community.Oracle.Que
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Frends.Community.Oracle.Helpers", "Frends.Community.Oracle.Helpers\Frends.Community.Oracle.Helpers.csproj", "{11DE85AA-7358-4C79-B503-43E2773CEA84}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Frends.Community.Oracle.Tests", "Frends.Community.Oracle.Tests\Frends.Community.Oracle.Tests.csproj", "{69A7C6CA-D915-44E8-AA4E-64F969C98763}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{11DE85AA-7358-4C79-B503-43E2773CEA84}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{11DE85AA-7358-4C79-B503-43E2773CEA84}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{11DE85AA-7358-4C79-B503-43E2773CEA84}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69A7C6CA-D915-44E8-AA4E-64F969C98763}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69A7C6CA-D915-44E8-AA4E-64F969C98763}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69A7C6CA-D915-44E8-AA4E-64F969C98763}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69A7C6CA-D915-44E8-AA4E-64F969C98763}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

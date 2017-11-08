@@ -32,7 +32,8 @@ namespace Frends.Community.Oracle.QueryData
                     command.XmlQueryProperties.MaxRows = Options.MaxmimumRows;
                     command.XmlQueryProperties.RootTag = Options.RootElementName;
                     command.XmlQueryProperties.RowTag = Options.RowElementName;
-                    command.Parameters.AddRange(Options.Parameters.Select(x => Methods.CreateOracleParam(x)).ToArray());
+
+                    if(Options.Parameters != null) command.Parameters.AddRange(Options.Parameters.Select(x => Methods.CreateOracleParam(x)).ToArray());
 
                     XmlReader reader = command.ExecuteXmlReader();
                     cancellationToken.ThrowIfCancellationRequested();
