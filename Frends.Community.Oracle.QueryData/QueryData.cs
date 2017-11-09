@@ -16,7 +16,7 @@ namespace Frends.Community.Oracle.QueryData
 {
     public class QueryData
     {
-        public async static Task<dynamic> ExecuteQuery(Parameters.Input Input, Parameters.Options Options, CancellationToken cancellationToken)
+        public async static Task<dynamic> PerformQuery(Parameters.Input Input, Parameters.Options Options, CancellationToken cancellationToken)
         {
             using (OracleConnection oracleConnection = new OracleConnection(Input.ConnectionString))
             {
