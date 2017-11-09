@@ -9,7 +9,7 @@ using System.Data;
 using System.Xml.Linq;
 using System.Dynamic;
 
-namespace Frends.Community.Oracle.Helpers
+namespace Frends.Community.Oracle.QueryData
 {
     public class Methods
     {

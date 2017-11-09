@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
-using Frends.Community.Oracle.Helpers;
+using Frends.Community.Oracle.QueryData;
 using System.Threading;
 using Newtonsoft.Json;
 using System.Xml.Linq;

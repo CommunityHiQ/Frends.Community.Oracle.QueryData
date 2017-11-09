@@ -61,10 +61,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Frends.Community.Oracle.Helpers\Frends.Community.Oracle.Helpers.csproj">
-      <Project>{11de85aa-7358-4c79-b503-43e2773cea84}</Project>
-      <Name>Frends.Community.Oracle.Helpers</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Frends.Community.Oracle.QueryData\Frends.Community.Oracle.QueryData.csproj">
       <Project>{d9124d6c-e5a0-4624-9e7f-0442a109e889}</Project>
       <Name>Frends.Community.Oracle.QueryData</Name>

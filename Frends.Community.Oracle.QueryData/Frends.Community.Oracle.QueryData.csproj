@@ -48,18 +48,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Methods.cs" />
+    <Compile Include="Parameters.cs" />
     <Compile Include="QueryData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Frends.Community.Oracle.Helpers\Frends.Community.Oracle.Helpers.csproj">
-      <Project>{11de85aa-7358-4c79-b503-43e2773cea84}</Project>
-      <Name>Frends.Community.Oracle.Helpers</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

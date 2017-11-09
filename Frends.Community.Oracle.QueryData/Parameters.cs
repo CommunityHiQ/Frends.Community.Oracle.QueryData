@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Frends.Community.Oracle.Helpers
+namespace Frends.Community.Oracle.QueryData
 {
     public class Parameters
     {

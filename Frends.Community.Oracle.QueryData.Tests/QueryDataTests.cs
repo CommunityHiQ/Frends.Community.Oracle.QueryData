@@ -1,6 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Frends.Community.Oracle.Helpers;
+using Frends.Community.Oracle.QueryData;
 using System.Threading;
 
 namespace Frends.Community.Oracle.Tests
