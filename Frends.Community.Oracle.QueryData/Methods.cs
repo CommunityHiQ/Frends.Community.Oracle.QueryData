@@ -13,7 +13,7 @@ namespace Frends.Community.Oracle.QueryData
 {
     public class Methods
     {
-        public static OracleParam CreateOracleParam(Parameters.OracleParameter parameter, ParameterDirection? direction = null)
+        public static OracleParam CreateOracleParam(OracleParameter parameter, ParameterDirection? direction = null)
         {
             var newParam = new OracleParam()
             {

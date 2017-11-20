@@ -16,7 +16,7 @@ namespace Frends.Community.Oracle.QueryData
 {
     public class QueryData
     {
-        public async static Task<dynamic> PerformQuery(Parameters.Input Input, Parameters.Options Options, CancellationToken cancellationToken)
+        public async static Task<dynamic> PerformQuery(Input Input, Options Options, CancellationToken cancellationToken)
         {
             using (OracleConnection oracleConnection = new OracleConnection(Input.ConnectionString))
             {
@@ -39,7 +39,7 @@ namespace Frends.Community.Oracle.QueryData
                     cancellationToken.ThrowIfCancellationRequested();
 
                     XmlDocument xmlDocument = new XmlDocument();
-                    xmlDocument.PreserveWhitespace = (Options.ReturnType != Parameters.OracleQueryReturnType.JArray);
+                    xmlDocument.PreserveWhitespace = (Options.ReturnType != OracleQueryReturnType.JArray);
                     xmlDocument.Load(reader);
 
                     if (!xmlDocument.HasChildNodes)
@@ -54,23 +54,23 @@ namespace Frends.Community.Oracle.QueryData
 
                     switch (Options.ReturnType)
                     {
-                        case Parameters.OracleQueryReturnType.XMLString:
+                        case OracleQueryReturnType.XMLString:
                             return xmlDocument.OuterXml;
-                        case Parameters.OracleQueryReturnType.XMLDocument:
+                        case OracleQueryReturnType.XMLDocument:
                             return xmlDocument;
-                        case Parameters.OracleQueryReturnType.JSONString:
+                        case OracleQueryReturnType.JSONString:
                             return JsonConvert.SerializeXmlNode(xmlDocument);
-                        case Parameters.OracleQueryReturnType.XDocument:
+                        case OracleQueryReturnType.XDocument:
                             XmlNodeReader nodeReader = new XmlNodeReader(xmlDocument);
                             nodeReader.MoveToContent();
                             return XDocument.Load(nodeReader);
-                        case Parameters.OracleQueryReturnType.Dynamic:
+                        case OracleQueryReturnType.Dynamic:
                             dynamic root = new ExpandoObject();
                             XDocument outputDoc;
                             outputDoc = XDocument.Parse(xmlDocument.OuterXml, LoadOptions.PreserveWhitespace);
                             Methods.ParseToDynamic(root, outputDoc.Elements().First());
                             return root;
-                        case Parameters.OracleQueryReturnType.JArray:
+                        case OracleQueryReturnType.JArray:
                             root = JToken.Parse(JsonConvert.SerializeXmlNode(xmlDocument))[command.XmlQueryProperties.RootTag];
                             if (root == null)
                                 return new JArray();
