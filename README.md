@@ -1,4 +1,4 @@
-# Frends.Community.Oracle
+# Frends.Community.Oracle.QueryData
 FRENDS community task for Oracle SQL operations
 
 ## Installing

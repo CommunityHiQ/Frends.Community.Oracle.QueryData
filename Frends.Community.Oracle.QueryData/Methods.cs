@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Oracle.ManagedDataAccess.Client;
 using OracleParam = Oracle.ManagedDataAccess.Client.OracleParameter;
 using System.Data;

@@ -27,7 +27,7 @@ namespace Frends.Community.Oracle.Tests
             //Options.RootElementName = "root";
             //Options.RowElementName = "row";
 
-            //var result = QueryData.QueryData.PerformQuery(Inputs, Options, new CancellationToken());
+            //var result = QueryData.QueryData.PerformQuery(Inputs, Options);
 
             //Assert.AreEqual(System.Threading.Tasks.TaskStatus.RanToCompletion, result.Status);
         }

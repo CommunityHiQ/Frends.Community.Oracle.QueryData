@@ -1,12 +1,8 @@
 ﻿using Oracle.ManagedDataAccess.Client;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
-using Frends.Community.Oracle.QueryData;
-using System.Threading;
 using Newtonsoft.Json;
 using System.Xml.Linq;
 using System.Dynamic;
@@ -16,12 +12,17 @@ namespace Frends.Community.Oracle.QueryData
 {
     public class QueryData
     {
-        public async static Task<dynamic> PerformQuery(Input Input, Options Options, CancellationToken cancellationToken)
+        /// <summary>
+        /// Task for performing queries in Oracle databases. See documentation at https://github.com/CommunityHiQ/Frends.Community.Oracle.QueryData
+        /// </summary>
+        /// <param name="Input"></param>
+        /// <param name="Options"></param>
+        /// <returns></returns>
+        public async static Task<dynamic> PerformQuery(Input Input, Options Options)
         {
             using (OracleConnection oracleConnection = new OracleConnection(Input.ConnectionString))
             {
-                await oracleConnection.OpenAsync(cancellationToken);
-                cancellationToken.ThrowIfCancellationRequested();
+                await oracleConnection.OpenAsync();
 
                 using (OracleCommand command = new OracleCommand(Input.Query, oracleConnection))
                 {
@@ -36,7 +37,6 @@ namespace Frends.Community.Oracle.QueryData
                     if(Options.Parameters != null) command.Parameters.AddRange(Options.Parameters.Select(x => Methods.CreateOracleParam(x)).ToArray());
 
                     XmlReader reader = command.ExecuteXmlReader();
-                    cancellationToken.ThrowIfCancellationRequested();
 
                     XmlDocument xmlDocument = new XmlDocument();
                     xmlDocument.PreserveWhitespace = (Options.ReturnType != OracleQueryReturnType.JArray);
