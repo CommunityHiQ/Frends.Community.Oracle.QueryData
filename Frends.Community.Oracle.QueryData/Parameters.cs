@@ -23,13 +23,7 @@ namespace Frends.Community.Oracle.QueryData
         /// </summary>
         [DefaultValue("SELECT NameColumn FROM TestTable")]
         public String Query { get; set; }
-    }
 
-    /// <summary>
-    /// Options class for QueryData component
-    /// </summary>
-    public class Options
-    {
         /// <summary>
         /// The name of the root element of the resultset
         /// </summary>
