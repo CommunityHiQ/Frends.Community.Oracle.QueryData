@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Frends.Tasks.Attributes;
+using System;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Frends.Community.Oracle.QueryData
 {
@@ -16,24 +13,28 @@ namespace Frends.Community.Oracle.QueryData
         /// The connection string to the Oracle server
         /// </summary>
         [DefaultValue("Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=MyHost)(PORT=MyPort))(CONNECT_DATA=(SERVICE_NAME=MyOracleSID)));User Id=myUsername;Password=myPassword;")]
+        [DefaultDisplayType(DisplayType.Text)]
         public String ConnectionString { get; set; }
 
         /// <summary>
         /// The query to perform
         /// </summary>
         [DefaultValue("SELECT NameColumn FROM TestTable")]
+        [DefaultDisplayType(DisplayType.Text)]
         public String Query { get; set; }
 
         /// <summary>
         /// The name of the root element of the resultset
         /// </summary>
         [DefaultValue("ROWSET")]
+        [DefaultDisplayType(DisplayType.Text)]
         public String RootElementName { get; set; }
 
         /// <summary>
         /// The name of the row element name of the resultset
         /// </summary>
         [DefaultValue("ROW")]
+        [DefaultDisplayType(DisplayType.Text)]
         public String RowElementName { get; set; }
 
         /// <summary>
@@ -70,12 +71,14 @@ namespace Frends.Community.Oracle.QueryData
         /// The name of the parameter
         /// </summary>
         [DefaultValue("ParameterName")]
+        [DefaultDisplayType(DisplayType.Text)]
         public String Name { get; set; }
 
         /// <summary>
         /// The value of the parameter
         /// </summary>
         [DefaultValue("Parameter value")]
+        [DefaultDisplayType(DisplayType.Text)]
         public dynamic Value { get; set; }
 
         /// <summary>
