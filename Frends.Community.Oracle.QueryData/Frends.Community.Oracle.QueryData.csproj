@@ -7,8 +7,8 @@
     <ProjectGuid>{D9124D6C-E5A0-4624-9E7F-0442A109E889}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Frends.Community.Oracle</RootNamespace>
-    <AssemblyName>Frends.Community.Oracle</AssemblyName>
+    <RootNamespace>Frends.Community.Oracle.QueryData</RootNamespace>
+    <AssemblyName>Frends.Community.Oracle.QueryData</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -20,6 +20,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\Frends.Community.Oracle.QueryData.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -28,8 +29,12 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\Frends.Community.Oracle.QueryData.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Frends.Tasks.Attributes, Version=1.2.0.0, Culture=neutral, PublicKeyToken=258fd606323928fc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Frends.Tasks.Attributes.1.2.1\lib\net40\Frends.Tasks.Attributes.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>

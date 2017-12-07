@@ -1,4 +1,4 @@
-# Frends.Community.Oracle
+# Frends.Community.Oracle.QueryData
 FRENDS community task for Oracle SQL operations
 
 ## Installing
@@ -45,17 +45,14 @@ NOTE: Be sure to merge the latest from "upstream" before making a pull request!
 | ---------------------| ---------------------| ------------------------------------ | ----- |
 | ConnectionString | string | Connection string to the oracle database | Data Source=localhost;User Id=<userid>;Password=<password>;Persist Security Info=True; |
 | Query | string | The SQL query to perform | SELECT * FROM Table WHERE Column = 'Value' |
-
-#### Options
-
-| Property             | Type                 | Description                          | Example |
-| ---------------------| ---------------------| ------------------------------------ | ----- |
 | RootElementName | string | The name of the root element of the resultset | RowSet |
 | RowElementName | string | The name of the row element(s) in the resultset | Row |
 | MaximumRows | integer | The maximum amount of rows to return | 666 |
 | TimeoutSeconds | integer | The amount of seconds to let a query run before timeout | 666 |
 | Parameters | OracleParameter[] |  Array with the oracle parameters | n/a |
 | ReturnType | OracleQueryReturnType | Specifies in what format to return the results | XMLDocument |
+
+NOTE: the correct notation to use parameters in PL/SQL is :parameterName, not @parameterName as in T-SQL
 
 #### OracleParameter
 

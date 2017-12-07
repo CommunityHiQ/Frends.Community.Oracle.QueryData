@@ -1,12 +1,8 @@
 ﻿using Oracle.ManagedDataAccess.Client;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
-using Frends.Community.Oracle.QueryData;
-using System.Threading;
 using Newtonsoft.Json;
 using System.Xml.Linq;
 using System.Dynamic;
@@ -16,43 +12,47 @@ namespace Frends.Community.Oracle.QueryData
 {
     public class QueryData
     {
-        public async static Task<dynamic> PerformQuery(Input Input, Options Options, CancellationToken cancellationToken)
+        /// <summary>
+        /// Task for performing queries in Oracle databases. See documentation at https://github.com/CommunityHiQ/Frends.Community.Oracle.QueryData
+        /// </summary>
+        /// <param name="Input"></param>
+        /// <param name="Options"></param>
+        /// <returns></returns>
+        public async static Task<dynamic> PerformQuery(Input Input)
         {
             using (OracleConnection oracleConnection = new OracleConnection(Input.ConnectionString))
             {
-                await oracleConnection.OpenAsync(cancellationToken);
-                cancellationToken.ThrowIfCancellationRequested();
+                await oracleConnection.OpenAsync();
 
                 using (OracleCommand command = new OracleCommand(Input.Query, oracleConnection))
                 {
-                    command.CommandTimeout = Options.TimeoutSeconds;
+                    command.CommandTimeout = Input.TimeoutSeconds;
                     command.XmlCommandType = OracleXmlCommandType.Query;
                     command.BindByName = true;
 
-                    command.XmlQueryProperties.MaxRows = Options.MaxmimumRows;
-                    command.XmlQueryProperties.RootTag = Options.RootElementName;
-                    command.XmlQueryProperties.RowTag = Options.RowElementName;
+                    command.XmlQueryProperties.MaxRows = Input.MaxmimumRows;
+                    command.XmlQueryProperties.RootTag = Input.RootElementName;
+                    command.XmlQueryProperties.RowTag = Input.RowElementName;
 
-                    if(Options.Parameters != null) command.Parameters.AddRange(Options.Parameters.Select(x => Methods.CreateOracleParam(x)).ToArray());
+                    if(Input.Parameters != null) command.Parameters.AddRange(Input.Parameters.Select(x => Methods.CreateOracleParam(x)).ToArray());
 
                     XmlReader reader = command.ExecuteXmlReader();
-                    cancellationToken.ThrowIfCancellationRequested();
 
                     XmlDocument xmlDocument = new XmlDocument();
-                    xmlDocument.PreserveWhitespace = (Options.ReturnType != OracleQueryReturnType.JArray);
+                    xmlDocument.PreserveWhitespace = (Input.ReturnType != OracleQueryReturnType.JArray);
                     xmlDocument.Load(reader);
 
                     if (!xmlDocument.HasChildNodes)
                     {
                         xmlDocument = new XmlDocument();
-                        xmlDocument.LoadXml(String.Format("<{0}></{0}>", Options.RootElementName));
+                        xmlDocument.LoadXml(String.Format("<{0}></{0}>", Input.RootElementName));
                     }
 
                     oracleConnection.Dispose();
                     oracleConnection.Close();
                     OracleConnection.ClearPool(oracleConnection);
 
-                    switch (Options.ReturnType)
+                    switch (Input.ReturnType)
                     {
                         case OracleQueryReturnType.XMLString:
                             return xmlDocument.OuterXml;
@@ -74,7 +74,7 @@ namespace Frends.Community.Oracle.QueryData
                             root = JToken.Parse(JsonConvert.SerializeXmlNode(xmlDocument))[command.XmlQueryProperties.RootTag];
                             if (root == null)
                                 return new JArray();
-                            return root[Options.RowElementName] is JArray ? (JArray)root[Options.RowElementName] : new JArray(root[Options.RowElementName]);
+                            return root[Input.RowElementName] is JArray ? (JArray)root[Input.RowElementName] : new JArray(root[Input.RowElementName]);
                         default:
                             return null;
                     }

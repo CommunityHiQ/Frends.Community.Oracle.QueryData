@@ -17,17 +17,16 @@ namespace Frends.Community.Oracle.Tests
 
             //string query = "SELECT * FROM XPNIS_SYSTEM_SYSDESCR;";
 
-            //Parameters.Options Options = new Parameters.Options();
-            //Parameters.Input Inputs = new Parameters.Input();
+            //Input Inputs = new Input();
 
             //Inputs.Query = query;
             //Inputs.ConnectionString = connectionString;
 
-            //Options.MaxmimumRows = 100;
-            //Options.RootElementName = "root";
-            //Options.RowElementName = "row";
+            //Inputs.MaxmimumRows = 100;
+            //Inputs.RootElementName = "root";
+            //Inputs.RowElementName = "row";
 
-            //var result = QueryData.QueryData.PerformQuery(Inputs, Options, new CancellationToken());
+            //var result = QueryData.QueryData.PerformQuery(Inputs);
 
             //Assert.AreEqual(System.Threading.Tasks.TaskStatus.RanToCompletion, result.Status);
         }

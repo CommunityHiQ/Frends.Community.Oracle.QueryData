@@ -1,11 +1,18 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2010
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Frends.Community.Oracle.QueryData", "Frends.Community.Oracle.QueryData\Frends.Community.Oracle.QueryData.csproj", "{D9124D6C-E5A0-4624-9E7F-0442A109E889}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Frends.Community.Oracle.QueryData.Tests", "Frends.Community.Oracle.QueryData.Tests\Frends.Community.Oracle.QueryData.Tests.csproj", "{69A7C6CA-D915-44E8-AA4E-64F969C98763}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F87A7A18-1B9E-4701-9ABC-08DFA2070521}"
+	ProjectSection(SolutionItems) = preProject
+		nuspec\Frends.Community.Oracle.QueryData.nuspec = nuspec\Frends.Community.Oracle.QueryData.nuspec
+		Frends.Community.Oracle.QueryData\FrendsTaskMetadata.json = Frends.Community.Oracle.QueryData\FrendsTaskMetadata.json
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,5 +31,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {ABC07BC8-6591-43EE-A196-D920C5696353}
 	EndGlobalSection
 EndGlobal
