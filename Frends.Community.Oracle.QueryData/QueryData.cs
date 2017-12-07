@@ -50,10 +50,6 @@ namespace Frends.Community.Oracle.QueryData
                             xmlDocument.LoadXml(String.Format("<{0}></{0}>", Input.RootElementName));
                         }
 
-                        //oracleConnection.Dispose();
-                        //oracleConnection.Close();
-                        //OracleConnection.ClearPool(oracleConnection);
-
                         switch (Input.ReturnType)
                         {
                             case OracleQueryReturnType.XMLString:
