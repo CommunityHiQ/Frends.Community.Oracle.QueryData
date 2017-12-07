@@ -6,7 +6,7 @@ namespace Frends.Community.Oracle.Tests
     [TestFixture]
     public class UnitTest1
     {
-        string connectionString = "Data Source=localhost;User Id=<userid>;Password=<salasana>;Persist Security Info=True;";
+        string connectionString = "Data Source=localhost;User Id=<username>;Password=<password>;Persist Security Info=True;";
 
         [Test]
         [Ignore("No way to automate this test without an Oracle instance")]
