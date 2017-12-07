@@ -14,16 +14,17 @@ namespace Frends.Community.Oracle.Tests
         {
             string query = "SELECT * FROM XPNIS_SYSTEM_SYSDESCR;";
 
-            Input Inputs = new Input();
+            var inputs = new Input();
+            var options = new Options { ThrowErrorOnFailure = true };
 
-            Inputs.Query = query;
-            Inputs.ConnectionString = connectionString;
+            inputs.Query = query;
+            inputs.ConnectionString = connectionString;
 
-            Inputs.MaxmimumRows = 100;
-            Inputs.RootElementName = "root";
-            Inputs.RowElementName = "row";
+            inputs.MaxmimumRows = 100;
+            inputs.RootElementName = "root";
+            inputs.RowElementName = "row";
 
-            var result = QueryData.QueryData.PerformQuery(Inputs);
+            var result = QueryData.QueryData.PerformQuery(inputs, options);
 
             Assert.AreEqual(System.Threading.Tasks.TaskStatus.RanToCompletion, result.Status);
         }
