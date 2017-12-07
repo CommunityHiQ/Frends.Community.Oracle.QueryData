@@ -8,7 +8,7 @@ namespace Frends.Community.Oracle.Tests
     [TestClass]
     public class UnitTest1
     {
-        string connectionString = "Data Source=localhost;User Id=<userid>;Password=<salasana>;Persist Security Info=True;";
+        string connectionString = "Data Source=localhost;User Id=<username>;Password=<password>;Persist Security Info=True;";
 
         [TestMethod]
         public void QueryOracle()
