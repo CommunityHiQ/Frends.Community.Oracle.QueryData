@@ -1,6 +1,7 @@
 ﻿using Frends.Tasks.Attributes;
-using System;
 using System.ComponentModel;
+
+#pragma warning disable 1591
 
 namespace Frends.Community.Oracle.QueryData
 {
@@ -14,40 +15,40 @@ namespace Frends.Community.Oracle.QueryData
         /// </summary>
         [DefaultValue("Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=MyHost)(PORT=MyPort))(CONNECT_DATA=(SERVICE_NAME=MyOracleSID)));User Id=myUsername;Password=myPassword;")]
         [DefaultDisplayType(DisplayType.Text)]
-        public String ConnectionString { get; set; }
+        public string ConnectionString { get; set; }
 
         /// <summary>
         /// The query to perform
         /// </summary>
         [DefaultValue("SELECT NameColumn FROM TestTable")]
         [DefaultDisplayType(DisplayType.Text)]
-        public String Query { get; set; }
+        public string Query { get; set; }
 
         /// <summary>
         /// The name of the root element of the resultset
         /// </summary>
         [DefaultValue("ROWSET")]
         [DefaultDisplayType(DisplayType.Text)]
-        public String RootElementName { get; set; }
+        public string RootElementName { get; set; }
 
         /// <summary>
         /// The name of the row element name of the resultset
         /// </summary>
         [DefaultValue("ROW")]
         [DefaultDisplayType(DisplayType.Text)]
-        public String RowElementName { get; set; }
+        public string RowElementName { get; set; }
 
         /// <summary>
         /// The maximum amount of rows to return; defaults to -1 eg. no limit
         /// </summary>
         [DefaultValue(-1)]
-        public Int32 MaxmimumRows { get; set; }
+        public int MaxmimumRows { get; set; }
 
         /// <summary>
         /// The timeout value in seconds
         /// </summary>
         [DefaultValue(30)]
-        public Int32 TimeoutSeconds { get; set; }
+        public int TimeoutSeconds { get; set; }
 
         /// <summary>
         /// Parameters for the database query
@@ -61,6 +62,23 @@ namespace Frends.Community.Oracle.QueryData
         public OracleQueryReturnType ReturnType { get; set; }
     }
 
+    public class Options
+    {
+        /// <summary>
+        /// Choose if error should be thrown if Task failes.
+        /// Otherwise returns Object {Success = false }
+        /// </summary>
+        [DefaultValue(true)]
+        public bool ThrowErrorOnFailure { get; set; }
+    }
+
+    public class Output
+    {
+        public bool Success { get; set; }
+        public string Message { get; set; }
+        public dynamic Result { get; set; }
+    }
+
     #region ParameterClassesAndEnums
     /// <summary>
     /// Class representing an Oracle query parameter
@@ -72,7 +90,7 @@ namespace Frends.Community.Oracle.QueryData
         /// </summary>
         [DefaultValue("ParameterName")]
         [DefaultDisplayType(DisplayType.Text)]
-        public String Name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// The value of the parameter

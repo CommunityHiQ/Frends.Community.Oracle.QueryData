@@ -72,4 +72,4 @@ NOTE: the correct notation to use parameters in PL/SQL is :parameterName, not @p
 | ---------------------| ---------------------| ----------------------- | -------- |
 | Success | boolean | Task execution result. | true |
 | Message | string | Failed task execution message (if throw exception on error is false). | "Connection failed" |
-| Result | variable | The resultset in the format specified in the Options of the input | <?xml version="1.0"?><root> <row>  <ID>0</ID>  <TABLEID>20013</TABLEID>  <FIELDNAME>AdminStatus</FIELDNAME>  <CODE>0</CODE>  <ATTRTYPE>0</ATTRTYPE>  <ACTIVEUSE>1</ACTIVEUSE>  <LANGUAGEID>fin</LANGUAGEID> </row></root>|
+| Result | dynamic | The resultset in the format specified in the Options of the input | <?xml version="1.0"?><root> <row>  <ID>0</ID>  <TABLEID>20013</TABLEID>  <FIELDNAME>AdminStatus</FIELDNAME>  <CODE>0</CODE>  <ATTRTYPE>0</ATTRTYPE>  <ACTIVEUSE>1</ACTIVEUSE>  <LANGUAGEID>fin</LANGUAGEID> </row></root>|
