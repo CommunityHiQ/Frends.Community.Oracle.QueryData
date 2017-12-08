@@ -1,5 +1,4 @@
 ﻿using Frends.Tasks.Attributes;
-using System;
 using System.ComponentModel;
 
 #pragma warning disable 1591

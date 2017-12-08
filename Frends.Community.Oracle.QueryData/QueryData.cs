@@ -1,12 +1,5 @@
-﻿using Oracle.ManagedDataAccess.Client;
-using System;
-using System.Linq;
+﻿using System;
 using System.Threading.Tasks;
-using System.Xml;
-using Newtonsoft.Json;
-using System.Xml.Linq;
-using System.Dynamic;
-using Newtonsoft.Json.Linq;
 using Frends.Tasks.Attributes;
 
 namespace Frends.Community.Oracle.QueryData
